@@ -1,0 +1,34 @@
+{
+  "name": "speakout-interactive",
+  "version": "1.0.0",
+  "description": "Speakout Interactive Learning Platform - Preserves original book with interactive features",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:3001": "vite --port 3001",
+    "dev:3002": "vite --port 3002",
+    "clean": "rm -rf node_modules/.vite && rm -f package-lock.json && npm install",
+    "start": "npm run clean && npm run dev",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "pdfjs-dist": "^4.4.168",
+    "idb": "^8.0.0",
+    "zustand": "^4.5.0",
+    "lucide-react": "^0.441.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
+  }
+}

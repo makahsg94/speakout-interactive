@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.vite/
+*.log
+.DS_Store
+
+# Source media (duplicated in public/)
+688_1- Speakout 3rd B1+ Student's Book_2022.pdf
+688_3- Speakout 3rd B1+ Class Audio/
+688_4- Speakout 3rd B1+ Video/
+688_4- Speakout 3rd B1+ Video/
+688_3- Speakout 3rd B1+ Class Audio/
