@@ -64,7 +64,8 @@ export function PDFViewer({
   const annotationLayerRef = useRef<HTMLDivElement>(null);
 
   // Image URL for current page
-  const imageUrl = `/pages/page_${String(currentPage).padStart(3, '0')}.jpg`;
+  const baseUrl = import.meta.env.BASE_URL?.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL || '/'}`
+  const imageUrl = `${baseUrl}pages/page_${String(currentPage).padStart(3, '0')}.jpg`
 
   // Load total pages on mount
   useEffect(() => {

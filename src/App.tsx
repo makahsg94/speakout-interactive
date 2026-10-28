@@ -55,8 +55,8 @@ export function App() {
         await translationService.initialize();
         await ttsService.getVoices();
         
-        // Load PDF to get page count
-        const doc = await pdfService.loadDocument(pdfUrl);
+        // Page count is known; PDF is displayed via pre-rendered page images
+        const doc = { numPages: 136 };
         
         // Load real audio and video files
         const rawAudioFiles = realAudioFiles as AudioFile[];
@@ -75,13 +75,22 @@ export function App() {
           });
         });
 
+        const baseUrl = import.meta.env.BASE_URL?.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL || '/'}`
+        const toAssetUrl = (p: string) => {
+          if (/^https?:\/\//.test(p)) return p
+          const clean = p.startsWith('/') ? p.slice(1) : p
+          return `${baseUrl}${clean}`
+        }
+
         const audioFiles = rawAudioFiles.map((a) => ({
           ...a,
+          path: toAssetUrl(a.path),
           pageId: a.pageId || (a.lessonId ? `page-${lessonStartPage.get(a.lessonId) ?? unitStartPage.get(a.unitId) ?? 1}` : a.pageId),
         })) as AudioFile[];
 
         const videoFiles = rawVideoFiles.map((v) => ({
           ...v,
+          path: toAssetUrl(v.path),
           pageId: v.pageId || (v.lessonId ? `page-${lessonStartPage.get(v.lessonId) ?? unitStartPage.get(v.unitId) ?? 1}` : v.pageId),
         })) as VideoFile[];
         
