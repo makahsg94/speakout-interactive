@@ -948,16 +948,6 @@ export const videoFiles: VideoFile[] = [
     "embeddable": true
   },
   {
-    "id": "video-8-SO3-B1+-U8-BBC-Programmes",
-    "editionId": "speakout-b1p-3rd",
-    "unitId": "unit-8",
-    "title": "Unit 8 BBC Programme: s",
-    "filename": "SO3 B1+ U8 BBC Programmes.mp4",
-    "path": "/video/SO3 B1+ U8 BBC Programmes.mp4",
-    "type": "bbc-programme",
-    "embeddable": true
-  },
-  {
     "id": "video-8-SO3-B1+-U8-BBC-Vlogs",
     "editionId": "speakout-b1p-3rd",
     "unitId": "unit-8",
